@@ -76,6 +76,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media(max-width:920px){.hero,.sh,.visit{grid-template-columns:1fr}.hero{gap:36px;padding:56px 0 52px}.svc,.revs{grid-template-columns:1fr 1fr}.links{display:none}.sh{gap:16px}}
 @media(max-width:600px){.wrap{padding:0 20px}.svc,.revs{grid-template-columns:1fr}.nav .btn{display:none}section{padding:60px 0}.cta{padding:36px 26px}.fab{display:flex;left:16px;right:16px}.fab .btn{box-shadow:0 8px 24px rgba(0,0,0,.15)}.fab .ghost{background:var(--card)}.lede{font-size:16.5px}}
 </style>
+<style id="zk-polish">
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{text-wrap:balance;letter-spacing:-0.015em}
+p{text-wrap:pretty}
+img{max-width:100%;height:auto}
+a,button,.btn{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease,opacity .2s ease}
+a[class*="btn"],button,.btn,.cta{min-height:44px}
+a[class*="btn"]:hover,button:hover,.btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px -8px rgba(0,0,0,.28)}
+a[class*="btn"]:active,button:active,.btn:active{transform:translateY(0);box-shadow:none}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:6px}
+section,footer{scroll-margin-top:72px}
+.zk-in{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.zk-in.zk-v{opacity:1;transform:none}
+@media (max-width:480px){h1{line-height:1.08}section{padding-left:max(env(safe-area-inset-left),0px)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,.zk-in{transition:none!important;animation:none!important}.zk-in{opacity:1;transform:none}}
+</style>
 </head>
 <body>
 <header><div class="wrap nav">
@@ -132,5 +149,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </main>
 <footer><div class="wrap"><span>© Tooth O&#x27;Clock, Jabalpur</span><span>Website concept by <a href="https://zykken.com" style="text-decoration:underline">Zykken</a></span></div></footer>
 <div class="fab"><a class="btn solid" href="https://wa.me/918962615528?text=Hi%20Tooth%20O'Clock,%20I'd%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a><a class="btn ghost" href="tel:+918962615528">Call</a></div>
+<script id="zk-polish-js">(function(){if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var els=[].slice.call(document.querySelectorAll('main section, body > section, footer')).filter(function(e,i){return e.getBoundingClientRect().top>innerHeight*0.9});els.forEach(function(e){e.classList.add('zk-in')});var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('zk-v');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){e.classList.add('zk-v')})},4000)})();</script>
 </body>
 </html>
